@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS Messages (
+    Id SERIAL PRIMARY KEY,
+    MessageText TEXT NOT NULL,
+    Timestamp TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    SequenceNumber INT NOT NULL
+);

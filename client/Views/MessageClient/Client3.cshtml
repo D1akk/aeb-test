@@ -1,0 +1,15 @@
+﻿<h2>Сообщения за последние 10 минут</h2>
+
+<form asp-action="GetMessagesHistory" method="post">
+    <button type="submit" class="btn btn-primary">Показать</button>
+</form>
+
+@if (ViewBag.MessageHistory != null)
+{
+    <ul>
+        @foreach (var message in ViewBag.MessageHistory)
+        {
+            <li>@message.Timestamp: @message.MessageText </li>
+        }
+    </ul>
+}

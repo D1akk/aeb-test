@@ -1,0 +1,16 @@
+﻿@model client.Models.Message
+
+<h2>Отправить сообщение</h2>
+
+<form asp-action="SendMessage" method="post">
+    <div class="form-group">
+        <label for="messageText">Сообщение</label>
+        <input type="text" class="form-control" id="messageText" name="MessageText" maxlength="128" placeholder="Введите текст" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+
+@if (ViewBag.MessageStatus != null)
+{
+    <p>@ViewBag.MessageStatus</p>
+}
